@@ -1,0 +1,23 @@
+{% extends "EdpMainBundle::page_niv2.html.twig" %}
+
+{% block n3 %}
+
+    <section><br /><br />
+
+        <div class='row'  style="text-align:center">    
+        <div class='col-sm-6 col-sm-offset-3' style="border:1px solid black; border-radius:10px;margin-top:20px">
+            <h1>Administration</h1>
+
+                        <a class='btn btn-default' href='{{path('admin_abonnements')}}'>Gérer les abonements</a><br /><br />
+                        <a class='btn btn-default' href='{{path('admin_article')}}'>Gérer les articles</a><br /><br />
+                        <a class='btn btn-default' href='{{path('admin_codes')}}'>Gérer les codes</a><br /><br />
+                        <a class='btn btn-default' href='{{path('admin_user')}}'>Gérer les utilisateurs</a><br /><br />
+
+        </div>
+    </div>
+
+    </section><br /><br />
+                
+                
+
+{% endblock n3 %}

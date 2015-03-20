@@ -1,0 +1,57 @@
+{% extends "EdpMainBundle::page_niv2.html.twig" %}
+
+{% block body -%}
+    <h1 style="text-align:center"> Liste des utilisateurs</h1><br /><br />
+
+    <div class='row'>    
+        <div class='col-sm-10 col-sm-offset-1'>
+            <table class="records_list table table-striped table-hover">
+                <thead>
+                    <tr>
+                        <th>Prenom</th>
+                        <th>Nom</th>
+                        <th>Email</th>
+                            {#                        <th>Role</th>#}
+                            {#                        <th>Dernière connexion</th>#}
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for entity in entities %}
+                        <tr>
+                            {#                            <td><a href="{{ path('admin_user_show', { 'id': entity.id }) }}">{{ entity.name }}</a></td>#}
+                            <td>{{ entity.username }}</td>
+                            <td>{{ entity.name }}</td>
+                            <td>{{ entity.email }}</td>
+
+                            {#{% for entity in entities %}
+                            <td>{{ entity.roles }}</td>
+                            {% endfor %}#}
+
+                            {#                            <td>{{ entity.last_login }}</td>#}
+                            <td>
+                                <ul>
+                                    <li>
+                                        <a href="{{ path('admin_user_show', { 'id': entity.id }) }}">Afficher</a>
+                                    </li>
+                                    <li>
+                                        <a href="{{ path('admin_user_edit', { 'id': entity.id }) }}">Modifier</a>
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            <ul>
+                <li>
+                    <a class="btn btn-primary pull-right" href="{{ path('admin_user_new') }}">
+                        Ajouter un utilisateur
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+
+{% endblock %}

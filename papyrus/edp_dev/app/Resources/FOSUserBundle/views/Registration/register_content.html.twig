@@ -1,0 +1,15 @@
+
+<div class="row">
+
+<div class="col-sm-4 col-sm-offset-4">
+    <div class="signup-form"><!--sign up form-->
+        <h2>Inscrivez-vous!</h2>
+        <form action="{{ path('fos_user_registration_register') }}" {{ form_enctype(form) }} method="POST" class="fos_user_registration_register">
+    {{ form_widget(form) }}
+    <div>
+        <br/><button type="submit" class="btn btn-default pull-right" id="_submit" name="_submit" value="{{ 'registration.submit'|trans({}, 'FOSUserBundle') }}" > Enregistrer </button><br /><br /><br /><br />
+    </div>
+</form>
+    </div><!--/sign up form-->
+</div>
+</div>

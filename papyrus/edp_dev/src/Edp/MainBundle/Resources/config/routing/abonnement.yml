@@ -1,0 +1,30 @@
+admin_abonnements:
+    path:     /
+    defaults: { _controller: "EdpMainBundle:abonnement:index" }
+
+admin_abonnements_show:
+    path:     /{id}/show
+    defaults: { _controller: "EdpMainBundle:abonnement:show" }
+
+admin_abonnements_new:
+    path:     /new
+    defaults: { _controller: "EdpMainBundle:abonnement:new" }
+
+admin_abonnements_create:
+    path:     /create
+    defaults: { _controller: "EdpMainBundle:abonnement:create" }
+    requirements: { _method: post }
+
+admin_abonnements_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "EdpMainBundle:abonnement:edit" }
+
+admin_abonnements_update:
+    path:     /{id}/update
+    defaults: { _controller: "EdpMainBundle:abonnement:update" }
+    requirements: { _method: post|put }
+
+admin_abonnements_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "EdpMainBundle:abonnement:delete" }
+    requirements: { _method: post|delete }

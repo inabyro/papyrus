@@ -1,0 +1,45 @@
+{% extends "EdpMainBundle::page_niv2.html.twig" %}
+
+{% block body -%}
+
+    <div class='row'>    
+        <div class='col-sm-6 col-sm-offset-3' style="border:1px solid black; border-radius:10px;margin-top:20px">
+            <h1 style="text-align:center">Code</h1>
+
+            <table class="record_properties">
+        <tbody>
+            {#<tr>
+                <th>Id</th>
+                <td>{{ entity.id }}</td>
+            </tr>#}
+            <tr>
+                <th>Titre</th>
+                <td>{{ entity.titre }}</td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>{{ entity.description }}</td>
+            </tr>
+            <tr>
+                <th>Prix</th>
+                <td>{{ entity.prix }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+        <ul class="record_actions">
+    <li>
+        <a href="{{ path('admin_codes') }}">
+           Retour à la liste des codes
+        </a>
+    </li>
+    <li>
+        <a href="{{ path('admin_codes_edit', { 'id': entity.id }) }}">
+            Modifier
+        </a>
+    </li>
+    <li>{{ form(delete_form) }}</li>
+</ul>
+    </div>
+    </div>
+{% endblock %}

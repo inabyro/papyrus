@@ -1,0 +1,30 @@
+admin_article:
+    path:     /
+    defaults: { _controller: "EdpMainBundle:article:index" }
+
+admin_article_show:
+    path:     /{id}/show
+    defaults: { _controller: "EdpMainBundle:article:show" }
+
+admin_article_new:
+    path:     /new
+    defaults: { _controller: "EdpMainBundle:article:new" }
+
+admin_article_create:
+    path:     /create
+    defaults: { _controller: "EdpMainBundle:article:create" }
+    requirements: { _method: post }
+
+admin_article_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "EdpMainBundle:article:edit" }
+
+admin_article_update:
+    path:     /{id}/update
+    defaults: { _controller: "EdpMainBundle:article:update" }
+    requirements: { _method: post|put }
+
+admin_article_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "EdpMainBundle:article:delete" }
+    requirements: { _method: post|delete }

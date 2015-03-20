@@ -1,0 +1,53 @@
+edp_main_admin_abonnements:
+    resource: "@EdpMainBundle/Resources/config/routing/abonnement.yml"
+    prefix:   /admin/abonnements
+
+edp_main_admin_codes:
+    resource: "@EdpMainBundle/Resources/config/routing/code.yml"
+    prefix:   /admin/codes
+
+edp_main_admin_articles:
+    resource: "@EdpMainBundle/Resources/config/routing/article.yml"
+    prefix:   /admin/articles
+
+edp_main_homepage:
+    path:     /
+    defaults: { _controller: EdpMainBundle:Main:index }
+    
+edp_show_code:
+    path:     /showcode
+    defaults: { _controller: EdpMainBundle:Main:showCodeDetails }
+    
+edp_createabo:
+    path:     /createabo
+    defaults: { _controller: EdpMainBundle:Main:createAbo }
+    
+edp_admin:
+    path:     /admin
+    defaults: { _controller: EdpMainBundle:Main:Admin }
+    
+edp_research:
+    path:     /research
+    defaults: { _controller: EdpMainBundle:Main:research }
+    
+edp_recap_cmd:
+    path:     /recap_cmd
+    defaults: { _controller: EdpMainBundle:Main:recapCmd }
+    
+edp_abo_liste_codes:
+    path:     /abo_liste_codes/{id}
+    defaults: { _controller: EdpMainBundle:Main:aboListeCodes }
+    requirements:
+        id:  \d+ 
+    
+edp_code_liste_articles:
+    path:     /code_liste_articles/{id}
+    defaults: { _controller: EdpMainBundle:Main:codeListeArticles }
+    requirements:
+        id:  \d+ 
+    
+edp_article_consult:
+    path:     /article_consult/{id}
+    defaults: { _controller: EdpMainBundle:Main:consultArticle }
+    requirements:
+        id:  \d+ 

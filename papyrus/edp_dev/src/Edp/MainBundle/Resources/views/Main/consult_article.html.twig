@@ -1,0 +1,43 @@
+{% extends "EdpMainBundle::page_niv2.html.twig" %}
+
+{% block body -%}
+
+    <div class='row'>    
+        <div class='col-sm-8 col-sm-offset-2' style="border:1px solid black; border-radius:10px;margin-top:20px">
+            <h1 style="text-align:center">Article</h1>
+
+            <table class="record_properties">
+                <tbody>
+                    <tr style="height:60px;">
+                        <th>Titre</th>
+                        <td>{{ article.titre }}</td>
+                    </tr>
+                    <tr style="height:60px;">
+                        <th>Nor</th>
+                        <td>{{ article.nor }}</td>
+                    </tr>
+                    <tr>
+                        <th></th>
+                        <td>{{ article.texte }}</td>
+                    </tr>
+                    <tr style="height:60px;">
+                        <th>Date</th>
+                        <td>{{ article.date|date('Y-m-d')}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+   {# <div class='row'>    
+        <div class='col-sm-3 col-sm-offset-5'>            
+            <ul class="record_actions">
+                <li>
+                    <a href="{{ path("edp_code_liste_articles",{'id':article.id})}}">
+                        Retour à la liste des articles
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>#}
+
+{% endblock %}

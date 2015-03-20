@@ -1,0 +1,22 @@
+{% extends "EdpMainBundle::page_niv2.html.twig" %}
+
+{% block body -%}
+
+    <div class='row'>    
+        <div class='col-sm-6 col-sm-offset-3'>
+            <h1 style="text-align:center">Créer un article</h1>
+
+            {{ form(form) }}
+
+            <ul class="record_actions">
+                <li>
+                    <a href="{{ path('admin_article') }}">
+                        Retour à la liste des articles
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+{% endblock %}
+

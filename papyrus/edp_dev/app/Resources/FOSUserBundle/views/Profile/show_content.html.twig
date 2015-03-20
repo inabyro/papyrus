@@ -1,0 +1,132 @@
+
+
+<div class="row">
+        <div class="col-sm-6 col-sm-offset-3">
+            <div class="login-form">
+                <h2 style="text-align: center">Mes abonnements</h2>
+                
+                {% for abonnements in abonnement %}
+                {% if abonnements.isActive == true %}
+                    
+                <table class="table table-striped table-hover">
+                    <thead>
+                        <tr style="background:#F0F0E9">
+                            <th>Libelle</th>
+                            <th>Debut</th>
+                            <th>Fin</th>
+                            <th>Statut</th>
+                            <th style="text-align:center">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                            <tr>
+                                <td>{{abonnements.libelle}}</td>
+                                <td>{{abonnements.debut|date('Y-m-d')}}</td>
+                                <td>{{abonnements.fin|date('Y-m-d')}}</td>
+                                <td style="color:blue;font-weight: bold;"> Actif </td>
+                                <td>
+                                    <ul>
+                                        <li>
+                                            <a href="{{ path("edp_abo_liste_codes",{'id':abonnements.id}) }}"> Afficher vos codes </a>
+                                        </li>
+                                    </ul>
+                                </td>
+                            </tr>
+                    </tbody>
+                </table>
+                    
+                {% else %} 
+                    
+                    <table class="table table-striped table-hover">
+                    <thead>
+                        <tr style="background:#F0F0E9">
+                            <th>Libelle</th>
+                            <th>Debut</th>
+                            <th>Fin</th>
+                            <th>Statut</th>
+                            <th style="text-align:center">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                            <tr>
+                                <td>{{abonnements.libelle}}</td>
+                                <td>{{abonnements.debut|date('Y-m-d')}}</td>
+                                <td>{{abonnements.fin|date('Y-m-d')}}</td>
+                                <td style="color:red;font-weight: bold;"> Inactif </td>
+                                 <td>
+                                    <ul>
+                                        <li>
+                                            <span style="color:red">Attente de validation </span>
+                                        </li>
+                                    </ul>
+                                </td>
+                            </tr>
+                    </tbody>
+                </table>
+                {% endif %}
+                {% endfor %}
+                 </div>
+        </div>
+    </div><hr />
+
+<section id="form">
+    <div>
+        <div class="row">
+            <div class="col-sm-2 col-sm-offset-3">
+                <div class="login-form">
+                    <h2>Rubriques</h2>
+                    <a href="{{path('fos_user_profile_show')}}"> Mes informations</a><br/>
+                    <a href="{{ path("fos_user_profile_edit") }}"> Modifier mes informations</a><br/>
+                    <a href="{{ path("fos_user_change_password") }}"> Modifier mon mot de passe</a><br/>
+{#                    <a href="#"> Mes adresses </a><br/>#}
+                    <a href="{{ path("fos_user_security_logout") }}"> Déconnexion </a>												
+                </div>
+            </div>
+
+            <div class="col-sm-4">
+                <div class="signup-form">
+                    <h2> Mes informations</h2>
+                    <form action="#">
+                        {#                        <label> Nom d'utilisateur</label>#}
+                        <input type="text" placeholder="{{ 'profile.show.username'|trans({}, 'FOSUserBundle') }}: {{ user.username }}"/>
+                        {#                        <label> Adresse e-mail</label>#}
+                        <input type="email" placeholder="{{ 'profile.show.email'|trans({}, 'FOSUserBundle') }}: {{ user.email }}"/>
+                        <a href="{{ path("fos_user_profile_edit") }}" class="btn btn-primary pull-right"> Modifier</a>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div><hr />
+
+    {#     {{user.username}}#}
+
+
+    {# 
+      <ul>
+    {% for abonnements in abonnement %}
+        {{abonnements.libelle}}
+    {% endfor %}
+    </ul>#}
+
+    {#<div class="row">
+        <div class="col-sm-6 col-sm-offset-3">
+            <div class="login-form"><!--login form-->
+                <h2>Mes abonnements</h2>
+                
+                {% for abonnements in abonnement %}
+                    {% if abonnements.isActive == true %}
+                        <a style='cursor:pointer'>{{abonnements.libelle}}</a> - <em>(actif)</em>
+                        <br/>
+                     {% else %}  
+                         <span>{{abonnements.libelle}}</span>
+                         <br/>
+                    {% endif %}
+                {% endfor %}
+
+               <a href="{{path('edp_createabo')}}" class="btn btn-primary pull-right"> Ajouter un abonnement </a>
+            </div>
+        </div>
+
+    </div><hr />#}
+
+    

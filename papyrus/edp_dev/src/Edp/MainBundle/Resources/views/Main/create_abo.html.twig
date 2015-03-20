@@ -1,0 +1,26 @@
+{% extends "EdpMainBundle::page_niv2.html.twig" %}
+
+{% block n3 %}
+
+    <section><br /><br />
+
+        {# FONCTION TWIG QUI AFFICHE LE FORMULAIRE CRÉÉ DANS ABOTYPE ET DEMANDÉ PAR LE CONTROLLER (creatAboAction)#}
+
+        <div class="row">
+        <div class="col-sm-4 col-sm-offset-4 signup-form">
+            <form action="" method="POST" {{ form_enctype(form) }} >
+                {{ form_widget(form) }}
+                <br /><button class="btn btn-default pull-right" type="submit">Enregistrer votre abonnement</button>
+                
+                <br /><br /><br />
+                <p style='text-align: center'><em><b> Un mail de confirmation vous sera envoyé</b></em></>
+                
+            </form>
+        </div>
+        </div>
+
+    </section><br /><br />
+                
+                
+
+{% endblock n3 %}

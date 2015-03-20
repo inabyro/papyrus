@@ -1,0 +1,13 @@
+edp_user:
+    resource: "@EdpUserBundle/Resources/config/routing.yml"
+    prefix:   /
+
+edp_assets:
+    resource: "@EdpAssetsBundle/Resources/config/routing.yml"
+    prefix:   /
+
+edp_main:
+    resource: "@EdpMainBundle/Resources/config/routing.yml"
+    prefix:   /
+
+

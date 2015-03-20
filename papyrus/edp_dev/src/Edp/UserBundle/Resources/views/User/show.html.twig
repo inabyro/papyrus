@@ -1,0 +1,41 @@
+{% extends "EdpMainBundle::page_niv2.html.twig" %}
+
+{% block body -%}
+
+    <div class='row'>    
+        <div class='col-sm-6 col-sm-offset-3' style="border:1px solid black; border-radius:10px;margin-top:20px">
+            <h1 style="text-align:center">Utilisateur</h1>
+
+            <table class="record_properties">
+                <tbody>
+                    <tr>
+                        <th>Prenom</th>
+                        <td>{{ entity.username }}</td>
+                    </tr>
+                    <tr>
+                        <th>Nom</th>
+                        <td>{{ entity.name }}</td>
+                    </tr>
+                    <tr>
+                        <th>Nom</th>
+                        <td>{{ entity.email }}</td>
+                    </tr>
+                </tbody>
+            </table><br />
+
+            <ul class="record_actions">
+                <li>
+                    <a href="{{ path('admin_user') }}">
+                        Retour à la liste des utilisateurs
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ path('admin_user_edit', { 'id': entity.id }) }}">
+                        Modifier
+                    </a>
+                </li>
+                <li>{{ form(delete_form) }}</li>
+            </ul>
+        </div>
+    </div>
+{% endblock %}

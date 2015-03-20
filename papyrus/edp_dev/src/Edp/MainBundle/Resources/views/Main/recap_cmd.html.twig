@@ -1,0 +1,23 @@
+{% extends "EdpMainBundle::page_niv2.html.twig" %}
+
+{% block n3 %}
+
+<section>
+    
+    
+    <ul>
+    {% for abonnement in abonnements %}
+         <li>{{abonnement.id}}</li>
+         <li>{{abonnement.utilisateurs}}</li>
+         <li>{{abonnement.utilisateurs.email}}</li>
+         <li>{{abonnement.libelle}}</li>
+         <li>{{abonnement.debut|date('d/m/Y')}}</li>
+         <li>{{abonnement.fin|date('d/m/Y')}}</li>
+      
+                    <hr />
+    {% endfor %}
+    </ul>
+
+</section><!--/form-->
+
+{% endblock n3 %}

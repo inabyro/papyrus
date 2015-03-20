@@ -1,0 +1,74 @@
+{% extends "EdpMainBundle::page_niv2.html.twig" %}
+
+{% block n3 %}
+
+    <section><br /><br />
+        
+        <div class="row">				
+        <div class="col-sm-2 col-sm-offset-3 signup-form" style="border:5px solid #F0F0E9;border-radius:6px;padding-bottom: 20px">
+            <h2>Vos abonnements</h2>
+            {% for abonnements in abonnement %}
+                {% if abonnements.isActive == true %}
+            <input type="radio" name="{{abonnements.libelle}}" value="{{abonnements.libelle}}" /> {{abonnements.libelle}}
+            <br/>
+            {% endif %}
+            {% endfor %}
+        </div>
+        <div class="col-sm-4"  style="border:5px solid #F0F0E9;border-radius:6px;padding-bottom:20px;margin-left: 10px;">
+            <div class="signup-form">
+                <form>
+                    <h2>Recherche intuitive</h2>				
+                    <input type="text" placeholder="..."/>
+                    <!--<button class="btn btn-default" type="submit" value="">Rechercher</button>-->				
+                </form>
+            </div>
+        </div>
+        </div>
+        
+        <br/>
+        <div class="row">				
+        <div class="col-sm-6 col-sm-offset-3 signup-form" style="border:5px solid #F0F0E9;border-radius:6px;padding-bottom: 20px;margin-left:389px;height:200px">
+        
+            
+        
+        </div>
+        </div>
+       
+       {#<div class="row">				
+        <div class="col-sm-3 col-sm-offset-3">
+            <div class="signup-form">
+                <form>
+                    <h2>Recherche intuitive</h2>				
+                    <input type="text" placeholder="..."/>
+                    <!--<button class="btn btn-default" type="submit" value="">Rechercher</button>-->				
+                </form>
+            </div>
+        </div>
+        <div class="col-sm-3">
+            <div class="signup-form">
+                <form>
+                    <h2>Par mot-clef</h2>				
+                    <input type="text" placeholder="..."/><br/><button class="pull-right" type="submit" value="">Rechercher</button>				
+                </form>
+            </div>
+        </div>
+
+    </div><br/>
+
+
+    <div class="row" style="margin-bottom:150px">
+        <div class="col-sm-4 col-sm-offset-4 signup-form">
+            <form>
+                <h2 class="text-center">Recherche par dates</h2>		
+                <label for="from">Entre le </label>
+                <input type="text" id="from" name="from">
+                <label for="to"> et le </label>
+                <input type="text" id="to" name="to"><br/>
+                <button class="btn btn-default pull-right" type="submit" value="">Rechercher</button>
+            </form>
+        </div>
+    </div><br/>                
+#}
+</section><!--/form-->
+
+{% endblock n3 %}
